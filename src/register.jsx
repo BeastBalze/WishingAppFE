@@ -10,7 +10,7 @@ const Register = ({setRegist}) => {
 
     const registerFunc = async(name, email, password) => {
         try {
-            await axios.post('http://localhost:4000/api/v1/register', {name, email, password});
+            await axios.post('https://wishingapp.onrender.com/api/v1/register', {name, email, password});
         } catch (error) {
             alert(error.message);
         }
