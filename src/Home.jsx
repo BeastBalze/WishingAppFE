@@ -171,7 +171,6 @@ const Home = ({ setLogged, logged }) => {
         <div className='accBox'>
           <div onClick={() => {
             var dis = document.getElementById('op');
-            console.log(dis.style.display);
             if(dis.style.display === 'none') dis.style.display = "flex";
             else dis.style.display = 'none';
           }}><FontAwesomeIcon style={{position : "absolute", top: "14px", right:"16px"}} icon={faCircleUser} /></div>
