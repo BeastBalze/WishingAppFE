@@ -1,0 +1,453 @@
+body {
+    margin: 0;
+    padding: 0%;
+}
+
+
+#login {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#forms-back {
+    background-color: lavender;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 15px;
+    height: 100%;
+}
+
+#forms-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-top: 15px;
+    border-radius: 20px;
+    border: 3px solid gainsboro;
+}
+
+#forms-container input:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+#forms-container i {
+    margin: 10px;
+}
+
+#forms-container input {
+    border: none;
+    border-radius: 24px;
+    background-color: gainsboro;
+    width: 80%;
+    height: 100%;
+    font-style: bold;
+    font-size: large;
+    padding-left: 20px;
+}
+
+#forms-container input::placeholder {
+    color: #000;
+    font-weight: 400;
+    text-align: center;
+}
+
+#forms-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputs {
+    padding: 0%;
+    width: 40%;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+#sub {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+}
+
+#regist {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+#regist:hover {
+    cursor: pointer;
+}
+
+#regist a {
+    color: black;
+}
+
+#regist a:hover {
+    zoom: 110%;
+}
+
+@media (max-width:700px) {
+    #inputs {
+        width: 90%;
+    }
+}
+
+/* Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card Card  */
+
+.del {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid grey;
+    display: none;
+    z-index: 5;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.del button {
+    width: 35px;
+    text-align: center;
+}
+
+.edit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid grey;
+    display: none;
+    z-index: 5;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.edit input {
+    margin: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.edit button {
+    width: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+
+.cardBox {
+    width: 100%;
+    display: flex;
+    margin: 0%;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    float: left;
+}
+
+.cardContainer {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    /* height: 30vh; */
+    background-color: rgba(246, 230, 201, 0.672);
+    border: 2px solid rgb(80, 77, 77);
+    border-radius: 1em;
+    padding: 1%;
+    margin-bottom: 5px;
+}
+
+.cardContainer button {
+    display: inline;
+    width: 40px;
+    border-radius: 8px;
+    margin: 0%;
+    margin-bottom: 4px;
+}
+
+.cardContainer h2 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.cardContainer h3 {
+    margin: 0%;
+    margin-bottom: 5px;
+}
+
+.cardContainer h5 {
+    margin: 0%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.cardContainer p {
+    margin: 0;
+    max-height: 35%;
+    min-height: 24px;
+    overflow-y: scroll;
+    /* background-color: red; */
+}
+
+.cardContainer p::-webkit-scrollbar {
+    display: none;
+}
+
+.cardContainer p {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+@media (max-width: 1000px) {
+    .cardContainer {
+        width: 30%;
+    }
+}
+
+@media (max-width:750px) {
+    .cardContainer {
+        width: 47%;
+    }
+}
+
+@media (max-width:500px) {
+
+    .edit input {
+        width: 90%;
+    }
+
+    .edit {
+        box-sizing: border-box;
+        width: 99%;
+    }
+
+    .del {
+        margin: 0%;
+        box-sizing: border-box;
+        width: 99%;
+    }
+
+    .cardContainer {
+        box-sizing: border-box;
+        width: 96%;
+        padding: 2%;
+    }
+}
+
+/* Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home */
+
+.create:hover {
+    zoom: 110%;
+}
+
+#op {
+    display: none;
+    flex-direction: column;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.accBox {
+    z-index: 4;
+
+}
+
+#op div {
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(247, 216, 216);
+    height: 24px;
+    margin-bottom: 4px;
+    font-size: 20px;
+}
+
+.home div {
+    cursor: pointer;
+}
+
+/* forgot password forgot password forgot password forgot password forgot password forgot password */
+
+.fpbody {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.fph1 {
+    text-align: center;
+    color: #333;
+}
+
+.fpp {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.fpform {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 320px;
+}
+
+.fpinput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fpbutton {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.fpbutton:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width:400px) {
+    .fpform {
+        width: 80%;
+    }
+}
+
+.rpcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.reset-form {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+.reset-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rpa {
+    margin: 5px;
+    background-color: #fff;
+}
+
+.rpa:hover {
+    zoom: 105%;
+}
+
+.reset-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.reset-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .reset-form {
+        max-width: 300px;
+    }
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #3498db;
+    border-top: 4px solid transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .loading-circle {
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+    }
+}
