@@ -7,7 +7,7 @@ const Login = ({ setLogged, setRegist }) => {
   const [password, setPass] = useState("");
   const LoginFunc = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:4000/api/v1/login', { email, password, Credential: true });
+      const res = await axios.post('https://wishingapp.onrender.com/api/v1/login', { email, password, Credential: true });
       // console.log(res.data.token);
       if (res.data.success) {
         const cookies = new Cookies();
