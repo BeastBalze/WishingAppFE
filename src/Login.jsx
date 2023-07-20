@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import './App.css'
+import './App.css';
+import {Link} from 'react-router-dom';
 import Cookies from 'universal-cookie';
 const Login = ({ setLogged, setRegist }) => {
   const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ const Login = ({ setLogged, setRegist }) => {
             <input style={{ width: "200px", marginLeft: "1em", height: "3em" }} type="submit" value="Log In"></input>
           </div>
         </form>
-        <a style={{paddingTop:"12px", marginLeft: "auto", marginRight: "auto" }} href="/password/forgot">Forgot Password</a>
+        <Link style={{paddingTop:"12px", marginLeft: "auto", marginRight: "auto" }} to='/password/forgot' >Forgot Password</Link>
         <div id="sub">
           <p id="regist" >New Here? <a style={{textDecoration:"underline"}} onClick={() => setRegist(true)}>Register</a></p>
         </div>
