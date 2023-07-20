@@ -196,7 +196,7 @@ const Home = ({ setLogged, logged }) => {
               />
             ))
           ) : (
-            <div>Loading...</div>
+            <div>Your added wishes will display here</div>
           )
         }
       </div>
