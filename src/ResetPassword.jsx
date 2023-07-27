@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 const ResetPassword = () => {
     const params = useParams();
-    const [success, setSuccess] = useState(true);
+    const [success, setSuccess] = useState(false);
     const [password, setP] = useState("");
     const [cPassword, setCP] = useState("");
     const token = params.token;
