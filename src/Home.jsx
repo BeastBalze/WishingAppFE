@@ -8,6 +8,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faSquarePlus, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 const Home = ({ setLogged, logged }) => {
+  var Username = "";
   const [isLoading, setLoading] = useState(false);
   const [wishes, setwishes] = useState([]);
   const [reciverMail, setreciverMail] = useState("");
@@ -30,9 +31,10 @@ const Home = ({ setLogged, logged }) => {
       const token = cookies.get('token');
       const res = await axios.put("https://wishingapp.onrender.com/api/v1/getall", { token });
       setwishes(res.data.list);
+      Username = res.data.name;
       setLoading(false);
     } catch (error) {
-      alert(error.message);
+      alert("Network Error");
     }
     setLoading(false);
   }
@@ -53,7 +55,7 @@ const Home = ({ setLogged, logged }) => {
       await axios.post("https://wishingapp.onrender.com/api/v1/create", { day, month, reciverMail, message, ocassion, name: tobewished, token });
       getall();
     } catch (error) {
-      alert(error.message);
+      alert("Network Error");
     }
     setLoading(false);
   }
@@ -73,7 +75,7 @@ const Home = ({ setLogged, logged }) => {
       await axios.put(url, { token });
       getall();
     } catch (error) {
-      alert(error.message);
+      alert("Network Error");
     }
     setLoading(false);
   }
@@ -92,7 +94,7 @@ const Home = ({ setLogged, logged }) => {
       await axios.put(`https://wishingapp.onrender.com/api/v1/edit/${id}`, { day, month, reciverMail, message, ocassion, token });
       getall();
     } catch (error) {
-      alert(error.message);
+      alert("Network Error");
     }
     setLoading(false);
   }
@@ -119,7 +121,7 @@ const Home = ({ setLogged, logged }) => {
       console.log("fkhlk");
       await axios.put("https://wishingapp.onrender.com/api/v1/update/password", {token, oldPassword, newPassword});
     } catch (error) {
-      alert(error.message);
+      alert("Network Error");
     }
     setLoading(false);
   }
@@ -171,10 +173,11 @@ const Home = ({ setLogged, logged }) => {
         <div className='accBox'>
           <div onClick={() => {
             var dis = document.getElementById('op');
+            console.log(dis.style.display);
             if(dis.style.display === 'none') dis.style.display = "flex";
             else dis.style.display = 'none';
-          }}><FontAwesomeIcon style={{position : "absolute", top: "14px", right:"16px"}} icon={faCircleUser} /></div>
-          <div style={{height: "25px"}}></div>
+          }}>{Username} <FontAwesomeIcon icon={faCircleUser} /></div>
+          {/* <div style={{height: "25px"}}></div> */}
           <div id='op'>
             <div onClick={() => edit("upBox")}>Update Profile</div>
             <div onClick={() => edit("delBox")}>Update Password</div>
@@ -196,7 +199,7 @@ const Home = ({ setLogged, logged }) => {
               />
             ))
           ) : (
-            <div>Your added wishes will display here</div>
+            <div>Your added wishes will appear here</div>
           )
         }
       </div>
