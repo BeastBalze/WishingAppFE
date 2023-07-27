@@ -27,14 +27,16 @@ const Card = ({obj, del, updateFunc, close, edit}) => {
       <button onClick={() => {updateFunc(obj._id, date, reciverMail, message, ocassion)}}>Update</button>
     </div>
     <div className='cardContainer'>
-        <h2 className='cardName'>{obj.name}</h2>
-        <h3>{obj.reciverMail}</h3>
-        <h3>{obj.ocassion}</h3>
-        <h3>{obj.day}, {array[obj.month - 1]}</h3>
+        <h3 className='cardName'><i style={{color: "grey"}}>Wish To</i>: {obj.name}</h3>
+        <h3><i style={{color: "grey"}}>His/Her Email</i>: {obj.reciverMail}</h3>
+        <h3><i style={{color: "grey"}}>Ocassion</i>: {obj.ocassion}</h3>
+        <h3><i style={{color: "grey"}}>Date</i>: {obj.day}, {array[obj.month - 1]}</h3>
         {/* <h3>date</h3> */}
-        <p>{obj.message}</p>
-        <button onClick={() => edit(editId)}>Edit</button>
-        <button style={{width: "55px"}} onClick={() => edit(delId)}>Delete</button>
+        <p><b><i style={{color: "grey"}}>Your Message</i>:</b> {obj.message}</p>
+        <div className='delContainer'>
+        <button  onClick={() => edit(editId)}>Edit</button>
+        <button  onClick={() => edit(delId)}>Delete</button>
+        </div>
     </div>
     </>
   )
