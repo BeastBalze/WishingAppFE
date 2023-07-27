@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import './App.css';
-import {Link} from 'react-router-dom';
+import './App.css'
 import Cookies from 'universal-cookie';
 const Login = ({ setLogged, setRegist }) => {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
+  const [logging, setLogging] = useState(false);
   const LoginFunc = async (email, password) => {
+    setLogging(true);
+    let res;
     try {
-      const res = await axios.post('https://wishingapp.onrender.com/api/v1/login', { email, password, Credential: true });
-      // console.log(res.data.token);
+      res = await axios.post('https://wishingapp.onrender.com/api/v1/login', { email, password, Credential: true });
       if (res.data.success) {
         const cookies = new Cookies();
         cookies.set("token", res.data.token, {
@@ -18,8 +19,9 @@ const Login = ({ setLogged, setRegist }) => {
       }
       setLogged(true);
     } catch (error) {
-      console.log(error.message);
+      alert("Invalid Email or password");
     }
+    setLogging(false);
   }
 
   const LoginHandeler = (e) => {
@@ -34,19 +36,19 @@ const Login = ({ setLogged, setRegist }) => {
         <form action="#" method="post" onSubmit={LoginHandeler}>
           <div id="inputs">
             <i class="fas fa-envelope"></i>
-            <input type="mail" onChange={(e) => setEmail(e.target.value)} placeholder="usermail@mail.com" name="email"></input>
+            <input type="mail" onChange={(e) => setEmail(e.target.value)} placeholder="usermail@mail.com" name="email" required></input>
           </div>
           <div id="inputs">
             <i class="fas fa-unlock"></i>
-            <input type="password" onChange={(e) => setPass(e.target.value)} placeholder="Password" name="password"></input>
+            <input type="password" onChange={(e) => setPass(e.target.value)} placeholder="Password" name="password" required></input>
           </div>
           <div id="sub">
-            <input style={{ width: "200px", marginLeft: "1em", height: "3em" }} type="submit" value="Log In"></input>
+            <input id='loginBtn' style={{ width: "200px", marginLeft: "1em", height: "3em" }} type="submit" value={logging ? "logging..." : "Log In"}></input>
           </div>
         </form>
-        <Link style={{paddingTop:"12px", marginLeft: "auto", marginRight: "auto" }} to='/password/forgot' >Forgot Password</Link>
+        <a style={{ paddingTop: "12px", marginLeft: "auto", marginRight: "auto" }} href="/password/forgot">Forgot Password</a>
         <div id="sub">
-          <p id="regist" >New Here? <a style={{textDecoration:"underline"}} onClick={() => setRegist(true)}>Register</a></p>
+          <p id="regist" >New Here? <a style={{ textDecoration: "underline" }} onClick={() => setRegist(true)}>Register</a></p>
         </div>
       </div>
     </div>
