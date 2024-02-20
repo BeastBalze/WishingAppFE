@@ -10,14 +10,17 @@ const Login = ({ setLogged, setRegist }) => {
     setLogging(true);
     let res;
       res = await axios.post('https://wishingapp.onrender.com/api/v1/login', { email, password, Credential: true });
+    console.log("1");
       if (res.data.success) {
+        console.log("2");
         const cookies = new Cookies();
         cookies.set("token", res.data.token, {
           expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
         });
         setLogged(true);
       }
-      else {
+      else if (!res.data.success) {
+        console.log("3");
         alert(res.data.message)
       }
     setLogging(false);
