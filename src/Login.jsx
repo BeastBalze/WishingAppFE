@@ -9,18 +9,17 @@ const Login = ({ setLogged, setRegist }) => {
   const LoginFunc = async (email, password) => {
     setLogging(true);
     let res;
-    try {
       res = await axios.post('https://wishingapp.onrender.com/api/v1/login', { email, password, Credential: true });
       if (res.data.success) {
         const cookies = new Cookies();
         cookies.set("token", res.data.token, {
           expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
         });
+        setLogged(true);
       }
-      setLogged(true);
-    } catch (error) {
-      alert("Invalid Email or password");
-    }
+      else {
+        alert(res.data.message)
+      }
     setLogging(false);
   }
 
