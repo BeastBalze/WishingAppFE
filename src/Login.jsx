@@ -20,7 +20,7 @@ const Login = ({ setLogged, setRegist }) => {
       }
     }
     catch (e) {
-      alert(res.data.message);
+      alert("Invalid Email or Password");
     }
     setLogging(false);
   }
